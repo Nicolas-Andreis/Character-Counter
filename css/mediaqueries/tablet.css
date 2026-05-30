@@ -1,0 +1,19 @@
+@media (min-width: 768px){
+    h1{
+        font-size: 4rem;
+        margin: 2vh 0;
+    }
+    nav{
+        padding: 2vw;
+    }
+    .metrics{
+        flex-direction: row;
+    }
+    .controls_checkboxes{
+        width: 35%;
+    }
+    .card{
+        width: 29vw;
+        align-items: start;
+    }
+}
