@@ -129,9 +129,8 @@ h1{
 .card{
     width: 90vw;
     height: 120px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -140,15 +139,15 @@ h1{
 }
 
 .card:nth-child(1){
-    background-image: url("../assets/images/violet_card.png");
+    background-image: url("../assets/images/cards/violet_card.png");
 }
 
 .card:nth-child(2){
-    background-image: url("../assets/images/yellow_card.png");
+    background-image: url("../assets/images/cards/yellow_card.png");
 }
 
 .card:nth-child(3){
-    background-image: url("../assets/images/orange_card.png");
+    background-image: url("../assets/images/cards/orange_card.png");
 }
 
 .card span:nth-child(1){
