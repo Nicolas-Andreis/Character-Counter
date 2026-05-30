@@ -1,0 +1,253 @@
+body{
+    background-color: var(--fondo-principal);
+    font-family: var(--tipografia);
+}
+
+/* Nav bar */
+nav{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw;
+    color: var(--texto-secundario);
+}
+
+.nav-logo{
+    width: 50px;
+}
+
+.nav-light{
+    width: 30px;
+}
+
+.container-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.container-dark-mode{
+    background-color: var(--fondo-cards-textarea);
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1{
+    color: var(--texto-principal);
+    font-weight: bold;
+    margin: 5vh 0;
+}
+
+/* textarea */
+
+.textarea{
+    background-color: var(--fondo-cards-textarea);
+    color: var(--texto-secundario);
+    width: 90vw;
+    height: 25vh;
+    padding: 20px 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    resize: none;
+    border: 2.5px solid var(--bordes-sutiles);
+}
+
+.textarea::placeholder{
+    color: var(--texto-secundario);
+    font-family: var(--tipografia);
+    font-weight: 400;
+    font-size: medium;
+}
+
+/* controls */
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: 30px;
+    margin: 20px auto;
+    color: var(--texto-secundario);
+    font-size: small;
+}
+
+.controls_checkboxes{
+    width: 40vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls_checkboxes label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    cursor: pointer;
+}
+
+.checkbox{
+    appearance: none;
+    margin-right: 10px;
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--texto-secundario);
+    border-radius: 3px;
+}
+
+.checkbox:checked{
+    background-color: var(--progress-bar);
+}
+
+/* metrics cards */
+.metrics{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.card{
+    width: 29vw;
+    height: 120px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card:nth-child(1){
+    background-image: url("../assets/images/violet_card.png");
+}
+
+.card:nth-child(2){
+    background-image: url("../assets/images/yellow_card.png");
+}
+
+.card:nth-child(3){
+    background-image: url("../assets/images/orange_card.png");
+}
+
+.card span:nth-child(1){
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.card span:nth-child(2){
+    font-size: medium;
+    font-weight: 600;
+}
+
+/* letter density */
+
+.density{
+    width: 90vw;
+    margin: 20px auto;
+}
+
+.density h2{
+    color: var(--texto-principal);
+    font-weight: 500;
+}
+.density_letter{
+    width: 10px;
+    margin: 0;
+    align-self: center;
+    text-align: center;
+}
+.density_list{
+    list-style: none;
+    color: var(--texto-secundario);
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.density_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.density_bar_track{
+    width: 80%;
+    height: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--fondo-cards-textarea);
+}
+
+.density_bar_fill{
+    width: 0%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--progress-bar);
+}
+
+.density_row:nth-child(1) .density_bar_fill{
+    width: 22%;
+}
+
+.density_row:nth-child(2) .density_bar_fill{
+    width: 16%;
+}
+
+.density_row:nth-child(3) .density_bar_fill{
+    width: 15%;
+}
+
+.density_row:nth-child(4) .density_bar_fill{
+    width: 11%;
+}
+
+.density_row:nth-child(5) .density_bar_fill{
+    width: 10%;
+}
+
+.density_toggle{
+    background-color: var(--fondo-principal);
+    color: var(--texto-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    width: 90px;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.density_toggle img{
+    width: 15px;
+    height: 15px;
+}
+
+footer {
+    color: var(--texto-secundario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
