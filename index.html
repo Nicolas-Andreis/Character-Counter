@@ -18,7 +18,7 @@
         <nav>
             <div>
                 <img src="" alt="logo">
-                <h1>Character Counter</h1>
+                <h2>Character Counter</h2>
             </div>
             <div>
                 <img src="" alt="light">
@@ -26,15 +26,104 @@
         </nav>
     </header>
     <main>
-        <section class="home">
-            <h2>Analyze your text <br> in real-time.</h2>
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Analyze your text <br> in real-time.</h1>
+            <!-- TEXTAREA -->
             <textarea
                 placeholder="Design is the silent ambassador of your brand. Simplicity is key to effective communication, creating clarity in every interaction. A great desing transforms complex ideas into elegant solutions, making them easy to understand. It blends aesthetics and functionality seamlessly.">
             </textarea>
+
+            <!-- CONTROLS -->
+            <div class="controls">
+                <div class="controls_checkboxes">
+                    <label>
+                        <input type="checkbox">
+                        <span class="checkbox_text">Exclude Spaces</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span class="checkbox_text">Set Character Limit</span>
+                    </label>
+                </div>
+                <!-- Se usa &lt; para representar el símbolo '<' en HTML es la unica manera que encontre -->
+                <p>Approx. reading time: &lt;1 minute</p>
+            </div>
+        </section>
+
+        <!-- METRICS CARDS -->
+        <section class="metrics" aria-label="Text statistics">
+            <article class="card">
+                <span class="card_number">278</span>
+                <span class="card_label">Total Characters</span>
+            </article>
+
+            <article class="card">
+                <span class="card_number">39</span>
+                <span class="card_label">Word Count</span>
+            </article>
+
+            <article class="card">
+                <span class="card_number">04</span>
+                <span class="card_label">Sentence Count</span>
+            </article>
+        </section>
+
+        <!-- LETTER DENSITY -->
+        <section class="density">
+            <h2>Letter Density</h2>
+
+            <ul class="density_list">
+                <li class="density_row">
+                    <span class="density_letter">E</span>
+                    <div class="density_bar_track">
+                        <div class="density_bar_fill"></div>
+                    </div>
+                    <span class="density_count">40 (16.06%)</span>
+                </li>
+
+                <li class="density_row">
+                    <span class="density_letter">I</span>
+                    <div class="density_bar_track">
+                        <div class="density_bar_fill"></div>
+                    </div>
+                    <span class="density_count">29 (11.65%)</span>
+                </li>
+
+                <li class="density_row">
+                    <span class="density_letter">T</span>
+                    <div class="density_bar_track">
+                        <div class="density_bar_fill"></div>
+                    </div>
+                    <span class="density_count">28 (11.24%)</span>
+                </li>
+
+                <li class="density_row">
+                    <span class="density_letter">O</span>
+                    <div class="density_bar_track">
+                        <div class="density_bar_fill"></div>
+                    </div>
+                    <span class="density_count">22 (8.84%)</span>
+                </li>
+
+                <li class="density_row">
+                    <span class="density_letter">N</span>
+                    <div class="density_bar_track">
+                        <div class="density_bar_fill"></div>
+                    </div>
+                    <span class="density_count">21 (8.43%)</span>
+                </li>
+            </ul>
+
+            <button class="densiti_toggle">
+                See more
+                <img src="./assets/icons/down_arrow.svg" alt="down arrow">
+            </button>
         </section>
     </main>
     <footer>
-
+        <p>Desarrollado por Nicolás Andreis - Mobile First - Responsive Design</p>
     </footer>
 </body>
 
