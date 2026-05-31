@@ -1,4 +1,8 @@
 @media (min-width: 768px){
+    .container-logo h2{
+        font-size: 2.1rem;
+    }
+    
     h1{
         font-size: 4rem;
         margin: 2vh 0;
@@ -6,14 +10,39 @@
     nav{
         padding: 2vw;
     }
+
+    .container-dark-mode{
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-light{
+        width: 35px;
+        height: 35px;
+    }
+
+    .textarea{
+        min-height: 120px;
+    }
     .metrics{
         flex-direction: row;
     }
-    .controls_checkboxes{
-        width: 35%;
+
+    .card{
+        padding: 0.5rem;
+    }
+    .controls{
+        align-items: center;
+    }
+    .controls_checkboxes label{
+        flex-direction: row;
+        width: 100%;
     }
     .card{
         width: 29vw;
         align-items: start;
+    }
+    .density_count{
+        width: 18%;
     }
 }
