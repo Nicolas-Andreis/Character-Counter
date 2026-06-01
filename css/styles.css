@@ -48,6 +48,11 @@ nav {
     box-shadow: var(--sombras);
 }
 
+.container-dark-mode:hover{
+    background-color: rgba(40, 40, 40, 0.426);
+    box-shadow: none;
+}
+
 /* =====================
     HERO
 ===================== */
