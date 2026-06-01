@@ -14,6 +14,25 @@ nav {
     color: var(--texto-secundario);
 }
 
+.nav-brand {
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: blurReveal 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes blurReveal {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
 .nav-logo {
     width: 50px;
     margin: 0;
@@ -48,7 +67,7 @@ nav {
     box-shadow: var(--sombras);
 }
 
-.container-dark-mode:hover{
+.container-dark-mode:hover {
     background-color: rgba(40, 40, 40, 0.426);
     box-shadow: none;
 }
@@ -72,9 +91,20 @@ h1 {
 }
 
 @keyframes colorReveal {
-    0%   { color: var(--progress-bar); opacity: 0; }
-    50%  { color: var(--texto-secundario); opacity: 0.6; }
-    100% { color: var(--texto-principal); opacity: 1; }
+    0% {
+        color: var(--progress-bar);
+        opacity: 0;
+    }
+
+    50% {
+        color: var(--texto-secundario);
+        opacity: 0.6;
+    }
+
+    100% {
+        color: var(--texto-principal);
+        opacity: 1;
+    }
 }
 
 /* =====================
