@@ -264,6 +264,10 @@ h1{
     width: 15px;
     height: 15px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.density_details[open] .density_toggle img {
+    transform: rotate(180deg);
 }
 
 footer {
