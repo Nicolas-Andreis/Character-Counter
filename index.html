@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nicolás Andreis">
+    <meta name="description" content="Analyze your text in real-time. Count characters, words and sentences instantly.">
 
     <title>Character Counter</title>
 
-    <!-- links css -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Reset primero -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/mediaqueries/tablet.css">
     <link rel="stylesheet" href="./css/mediaqueries/desktop.css">
 
-    <!-- favicoin -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/logo/logo.png">
 
-    <!-- google fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -26,14 +27,14 @@
 
 <body>
     <header>
-        <nav>
+        <nav aria-label="Navegación principal">
             <div class="container-logo">
                 <img src="./assets/logo/logo.png" alt="logo" class="nav-logo">
-                <h2>Character Counter</h2>
+                <span>Character Counter</span>
             </div>
-            <div class="container-dark-mode">
-                <img src="./assets/icons/light.svg" alt="light" class="nav-light">
-            </div>
+            <button class="container-dark-mode" aria-label="Cambiar tema de color">
+                <img src="./assets/icons/light.svg" alt="" aria-hidden="true" class="nav-light">
+            </button>
         </nav>
     </header>
     <main>
@@ -41,12 +42,17 @@
         <section class="hero">
             <h1>Analyze your text <br> in real-time.</h1>
             <!-- TEXTAREA -->
-            <textarea class="textarea"
+            <textarea class="textarea" aria-label="Texto a analizar"
                 placeholder="Design is the silent ambassador of your brand. Simplicity is key to effective communication, creating clarity in every interaction. A great desing transforms complex ideas into elegant solutions, making them easy to understand. It blends aesthetics and functionality seamlessly."></textarea>
 
             <!-- CONTROLS -->
             <div class="controls">
-                <div class="controls_checkboxes">
+
+                <!-- fieldset agrupa controles relacionados semánticamente -->
+                <fieldset class="controls_checkboxes">
+                    <!-- legend oculta visualmente pero disponible para lectores de pantalla -->
+                    <legend class="sr-only">Opciones de conteo</legend>
+
                     <label>
                         <input type="checkbox" class="checkbox">
                         <span class="checkbox_text">Exclude Spaces</span>
@@ -56,9 +62,14 @@
                         <input type="checkbox" class="checkbox">
                         <span class="checkbox_text">Set Character Limit</span>
                     </label>
-                </div>
-                <!-- Se usa &lt; para representar el símbolo '<' en HTML es la unica manera que encontre -->
-                <p>Approx. reading time: &lt;1 minute</p>
+                </fieldset>
+
+                <!-- time: da significado semántico a la duración -->
+                <!-- &lt; es la única forma de escribir '<' dentro de HTML -->
+                <p class="reading-time">
+                    Approx. reading time: <time datetime="PT1M">&lt;1 minute</time>
+                </p>
+
             </div>
         </section>
 
@@ -88,7 +99,7 @@
                 <li class="density_row">
                     <span class="density_letter">E</span>
                     <div class="density-container-progress">
-                        <div class="density_bar_track">
+                        <div class="density_bar_track" role="progressbar">
                             <div class="density_bar_fill"></div>
                         </div>
                     </div>
@@ -98,7 +109,7 @@
                 <li class="density_row">
                     <span class="density_letter">I</span>
                     <div class="density-container-progress">
-                        <div class="density_bar_track">
+                        <div class="density_bar_track" role="progressbar">
                             <div class="density_bar_fill"></div>
                         </div>
                     </div>
@@ -108,7 +119,7 @@
                 <li class="density_row">
                     <span class="density_letter">T</span>
                     <div class="density-container-progress">
-                        <div class="density_bar_track">
+                        <div class="density_bar_track" role="progressbar">
                             <div class="density_bar_fill"></div>
                         </div>
                     </div>
@@ -118,7 +129,7 @@
                 <li class="density_row">
                     <span class="density_letter">O</span>
                     <div class="density-container-progress">
-                        <div class="density_bar_track">
+                        <div class="density_bar_track" role="progressbar">
                             <div class="density_bar_fill"></div>
                         </div>
                     </div>
@@ -128,7 +139,7 @@
                 <li class="density_row">
                     <span class="density_letter">N</span>
                     <div class="density-container-progress">
-                        <div class="density_bar_track">
+                        <div class="density_bar_track" role="progressbar">
                             <div class="density_bar_fill"></div>
                         </div>
                     </div>
@@ -141,6 +152,20 @@
                     See more
                     <img src="./assets/icons/down_arrow.svg" alt="down arrow">
                 </summary>
+
+                <!-- Letras adicionales ocultas hasta hacer click -->
+                <ul class="density_list">
+                    <li class="density_row">
+                        <span class="density_letter" aria-hidden="true">A</span>
+                        <div class="density-container-progress">
+                            <div class="density_bar_track" role="progressbar" aria-label="A: 7.23%">
+
+                                <div class="density_bar_fill" style="width: 7.23%"></div>
+                            </div>
+                        </div>
+                        <span class="density_count">18 (7.23%)</span>
+                    </li>
+                </ul>
             </details>
         </section>
     </main>

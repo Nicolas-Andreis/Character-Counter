@@ -25,11 +25,11 @@ nav{
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-weight: 200;
+    font-weight: bold;
     width: 95%;
 }
 
-.container-logo h2{
+.container-logo span{
     font-size: 1.4rem;
 }
 
@@ -38,12 +38,14 @@ nav{
     width: 40px;
     height: 40px;
     border-radius: 20%;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     box-shadow: var(--sombras);
 }
+
 
 /* HERO */
 
@@ -100,6 +102,17 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
 }
 
 .controls_checkboxes label{

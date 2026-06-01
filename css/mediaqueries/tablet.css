@@ -1,6 +1,7 @@
 @media (min-width: 768px){
-    .container-logo h2{
+    .container-logo span{
         font-size: 2.1rem;
+        font-weight: bold;
     }
     
     h1{
