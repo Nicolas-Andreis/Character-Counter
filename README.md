@@ -33,16 +33,29 @@ El archivo `index.html` está dividido en tres grandes bloques:
 
 ## Cómo se resolvió el CSS
 
-- **Variables CSS (`:root`)** — Paleta de colores, radios de borde, sombras y fuente definidos centralmente.
+- **Variables CSS (`:root`)** — Paleta de colores, sombras y fuente definidos centralmente.
 - **Flexbox** — Usado en header, controles, tarjetas en mobile y filas de densidad.
-- **Barras de progreso** — Implementadas con `div` anidados (`.density__bar-track` + `.density__bar-fill`)
-- **Checkboxes personalizados**
-- **Responsive** — Media queries apto para desktop, tablet y mobile
-- **separación** - reset - styles - variables
+- **Barras de progreso** — Implementadas con `div` anidados (`.density_bar_track` + `.density_bar_fill`), con ancho definido mediante variables CSS inline (`--ancho`) para permitir animación.
+- **Checkboxes personalizados** — Estilizados con `appearance: none` y `:checked`.
+- **Animaciones CSS** — Ver sección dedicada más abajo.
+- **Responsive** — Media queries para desktop, tablet y mobile.
+- **Separación de archivos** — `reset.css`, `variables.css`, `styles.css` y media queries en carpeta dedicada.
+
+## Animaciones implementadas
+
+Todas las animaciones son **CSS puro, sin JavaScript**.
+
+- **Nombre del sitio** (`nav-brand`) — Efecto blur reveal: el texto aparece desenfocado y se va aclarando hasta quedar nítido, con las letras expandiéndose desde un `letter-spacing` amplio hasta su valor normal.
+- **Cards de métricas** — Efecto `fadeUp` escalonado: cada card arranca invisible y sube desde abajo con un delay progresivo de 0.1s, 0.25s y 0.4s.
+- **Barras de Letter Density** — Animación de expansión: cada barra arranca en `width: 0%` y se expande hasta su valor real (`--ancho`) con delays escalonados, usando variables CSS inline para que cada barra conozca su propio ancho objetivo.
+- **Flecha de "See more"** — Rotación de 180° al abrir el `<details>`, usando el selector `details[open]`.
+- **Hover en cards** — Efecto `filter: brightness` con transición suave al pasar el cursor.
 
 ## Dificultades encontradas
 
-- Haciendolo responsivo, probandolo en diferentes dispositivos tuve que ajustar bastante.
+- Al hacer el diseño responsive tuve que ajustar bastante probando en diferentes dispositivos y tamaños de pantalla.
+- Conflicto entre `animation` y `transition` en la misma propiedad `transform` en las cards — resuelto separando el hover con `filter: brightness` en lugar de `translateY`.
+- Animación de barras de progreso: el ancho de cada barra es distinto, por lo que no se podía usar un `@keyframes` genérico. Se resolvió pasando el valor como variable CSS inline (`style="--ancho: 16.06%"`) y leyéndola desde el `@keyframes`.
 
 ## Capturas del resultado
 DESKTOP
@@ -59,17 +72,27 @@ MOBILE
 proyecto/
 ├── index.html
 ├── css/
-│   └── mediaqueries/
-│   |              └── desktop.css
-│   |              └── tablet.css
-│   └── reset.css
-│   └── styles.css
+│   ├── mediaqueries/
+│   │   ├── desktop.css
+│   │   └── tablet.css
+│   ├── reset.css
+│   ├── styles.css
 │   └── variables.css
 ├── js/
 ├── assets/
-│   └── icons/
-│   └── images/
-│   |        └── cards/
-│   └── logo/
+│   ├── icons/
+│   ├── images/
+│   │   └── cards/
+│   ├── logo/
+│   └── mockups/
 └── README.md
 ```
+
+## Próximos pasos
+
+Segunda etapa del proyecto: agregar **JavaScript** para dar comportamiento dinámico:
+
+- Conteo real de caracteres, palabras y oraciones
+- Cálculo de tiempo de lectura estimado
+- Generación automática de la densidad de letras
+- Funcionalidad de los checkboxes (excluir espacios, límite de caracteres)
